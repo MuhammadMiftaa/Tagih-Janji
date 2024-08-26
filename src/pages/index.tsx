@@ -5,6 +5,10 @@ import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import HyperText from "@/components/magicui/hyper-text";
+import TypingAnimation from "@/components/magicui/typing-animation";
+import { cn } from "@/lib/utils";
+import TextReveal from "@/components/magicui/text-reveal";
 
 export default function Home() {
   const navItems = [
@@ -29,7 +33,7 @@ export default function Home() {
 
   return (
     <main>
-      <FloatingNav className="font-lora" navItems={navItems} />
+      {/* <FloatingNav className="font-lora" navItems={navItems} /> */}
       <AuroraBackground>
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
@@ -69,8 +73,8 @@ export default function Home() {
           </Highlight>
         </motion.h1>
       </HeroHighlight>
-      <div className="pt-16 px-48 bg-zinc-50">
-        <div className="flex flex-col font-lora text-justify">
+      <div className="pt-16 bg-zinc-50">
+        <div className="flex flex-col font-lora text-justify px-48">
           <h1 className="font-bold text-3xl">
             Janji Politik, Berita Bohong, dan Politik Penyangkalan
           </h1>
@@ -123,10 +127,115 @@ export default function Home() {
             mewujudkan apa yang sudah dijanjikannya.
           </p>
         </div>
-        <div>
+        <div className="mt-20 bg-yellow px-48 py-20">
+          {/* 
           <h1 className="font-light text-5xl py-20 font-quicksand ">
             Janji Presiden dan Wakil Presiden Terpilih.
-          </h1>
+          </h1> */}
+          <TypingAnimation
+            className="text-7xl text-left font-lora font-light text-black dark:text-white"
+            text="Janji Presiden dan Wakil Presiden Terpilih."
+          />
+          <p className="font-lora text-2xl mt-10">
+            Dari sekian banyak janji dan program Prabowo-Gibran di Pilpres 2024,
+            terdapat tiga hal yang paling menonjol dan sering disampaikan oleh
+            pasangan capres-cawapres tersebut.
+          </p>
+          <div className="py-8">
+            <div>
+              <h1 className="font-lora my-6 text-4xl font-semibold">
+                1. Melanjutkan Pembangunan IKN
+              </h1>
+              <div
+                className={cn(
+                  "group w-full cursor-pointer overflow-hidden relative card h-[27rem] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
+                  "bg-[url(https://hypeabis.id/assets/content/20230425154852000000istanaNyoman.jpg)] bg-cover",
+                  // Preload hover image by setting it in a pseudo-element
+                  "before:bg-[url(/gif/pembangunan-ikn.gif)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
+                  "hover:bg-[url(/gif/pembangunan-ikn.gif)]",
+                  "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
+                  "transition-all duration-500"
+                )}
+              >
+                <div className="text relative z-50 font-lora group-hover:bottom-0 -bottom-28 duration-500">
+                  <h1
+                    className="font-bold text-xl md:text-3xl text-gray-50 relative"
+                    style={{ textShadow: "3px 3px 5px #000" }}
+                  >
+                    CNN Indonesia | 12 Agustus 2024
+                  </h1>
+                </div>
+              </div>
+              <TextReveal
+                className="font-lora"
+                text="Janji Prabowo Subianto untuk melanjutkan pembangunan Ibu Kota
+                Negara (IKN) Nusantara pertama kali ditegaskan dalam berbagai
+                kesempatan, terutama setelah menjadi Presiden terpilih. Salah
+                satu momen signifikan adalah ketika Prabowo berkomitmen untuk
+                melanjutkan proyek IKN saat menghadiri Sidang Kabinet pada
+                Agustus 2024, di mana ia menyatakan akan meneruskan dan
+                menyelesaikan inisiatif yang dimulai oleh Presiden Jokowi."
+              />
+            </div>
+            <div>
+              <h1 className="font-lora my-6 text-4xl font-semibold">
+                2. Hilirisasi
+              </h1>
+              <div
+                className={cn(
+                  "group w-full cursor-pointer overflow-hidden relative card h-[27rem] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
+                  "bg-[url(https://cdn.visiteliti.com/article/2021-12/28/POLJoU9HQYgkkesuTJU7_1640662510.jpeg)] bg-cover",
+                  // Preload hover image by setting it in a pseudo-element
+                  "before:bg-[url(/gif/hilirisasi.gif)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
+                  "hover:bg-[url(/gif/hilirisasi.gif)]",
+                  "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
+                  "transition-all duration-500"
+                )}
+              >
+                <div className="text relative z-50 font-lora group-hover:bottom-0 -bottom-28 duration-500">
+                  <h1
+                    className="font-bold text-xl md:text-3xl text-gray-50 relative"
+                    style={{ textShadow: "3px 3px 5px #000" }}
+                  >
+                    CNN Indonesia | 12 Agustus 2024
+                  </h1>
+                </div>
+              </div>
+              <TextReveal
+                className="font-lora"
+                text="Prabowo telah berulang kali menekankan pentingnya hilirisasi industri sebagai bagian dari strategi ekonomi nasional, terutama dalam meningkatkan nilai tambah sumber daya alam Indonesia. Janji ini semakin ditekankan selama kampanye pemilihan presiden 2024 sebagai salah satu prioritas utamanya dalam membangun ekonomi yang lebih mandiri."
+              />
+            </div>
+            <div>
+              <h1 className="font-lora my-6 text-4xl font-semibold">
+                3. Makan Siang Gratis di Sekolah
+              </h1>
+              <div
+                className={cn(
+                  "group w-full cursor-pointer overflow-hidden relative card h-[27rem] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
+                  "bg-[url(https://assets.ladiestory.id/gallery/16582055731130052815-makan-siang.jpg)] bg-cover",
+                  // Preload hover image by setting it in a pseudo-element
+                  "before:bg-[url(/gif/makan-siang-gratis.gif)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
+                  "hover:bg-[url(/gif/makan-siang-gratis.gif)]",
+                  "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
+                  "transition-all duration-500"
+                )}
+              >
+                <div className="text relative z-50 font-lora group-hover:bottom-0 -bottom-28 duration-500">
+                  <h1
+                    className="font-bold text-xl md:text-3xl text-gray-50 relative"
+                    style={{ textShadow: "3px 3px 5px #000" }}
+                  >
+                    CNN Indonesia | 12 Agustus 2024
+                  </h1>
+                </div>
+              </div>
+              <TextReveal
+                className="font-lora"
+                text="Program ini pertama kali disampaikan secara luas selama kampanye pemilihan presiden 2024. Prabowo menjanjikan bahwa jika terpilih, ia akan meluncurkan program makan siang gratis untuk semua siswa di sekolah-sekolah di Indonesia, dengan tujuan meningkatkan gizi anak-anak dan mendukung pertumbuhan dan perkembangan mereka."
+              />
+            </div>
+          </div>
         </div>
       </div>
     </main>
