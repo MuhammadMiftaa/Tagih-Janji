@@ -45,7 +45,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
           })}
 
           <button className="absolute bottom-72 right-0 px-4 py-2 rounded-md border border-black bg-yellow font-lora text-black text-xl hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
-            Apa harapannya?
+          Kenapa Ini Penting?
           </button>
         </p>
       </div>

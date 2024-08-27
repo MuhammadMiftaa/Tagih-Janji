@@ -9,6 +9,8 @@ import HyperText from "@/components/magicui/hyper-text";
 import TypingAnimation from "@/components/magicui/typing-animation";
 import { cn } from "@/lib/utils";
 import TextReveal from "@/components/magicui/text-reveal";
+import { LinkPreview } from "@/components/ui/link-preview";
+import { MdFormatQuote } from "react-icons/md";
 
 export default function Home() {
   const navItems = [
@@ -52,6 +54,7 @@ export default function Home() {
       </AuroraBackground>
       <HeroHighlight>
         <motion.h1
+          data-aos="zoom-in"
           initial={{
             opacity: 0,
             y: 20,
@@ -235,6 +238,50 @@ export default function Home() {
                 text="Program ini pertama kali disampaikan secara luas selama kampanye pemilihan presiden 2024. Prabowo menjanjikan bahwa jika terpilih, ia akan meluncurkan program makan siang gratis untuk semua siswa di sekolah-sekolah di Indonesia, dengan tujuan meningkatkan gizi anak-anak dan mendukung pertumbuhan dan perkembangan mereka."
               />
             </div>
+          </div>
+
+          <div className="flex justify-center items-center h-[40rem] flex-col px-4 relative">
+            <p className="text-neutral-900 font-lora dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto">
+              <p className="text-7xl">
+                <MdFormatQuote />
+              </p>
+              Janji-janji besar, seperti melanjutkan pembangunan{" "}
+              <LinkPreview
+                imageSrc="/gif/pembangunan-ikn.gif"
+                isStatic={true}
+                url="https://tailwindcss.com"
+                className="font-bold"
+              >
+                Ibu Kota Negara (IKN) Nusantara
+              </LinkPreview>
+              , mendorong{" "}
+              <LinkPreview
+                imageSrc="/gif/hilirisasi.gif"
+                isStatic={true}
+                url="https://tailwindcss.com"
+                className="font-bold"
+              >
+                hilirisasi
+              </LinkPreview>{" "}
+              industri untuk meningkatkan nilai tambah sumber daya alam, serta
+              menyediakan{" "}
+              <LinkPreview
+                imageSrc="/gif/makan-siang-gratis.gif"
+                isStatic={true}
+                url="https://tailwindcss.com"
+                className="font-bold"
+              >
+                makan siang gratis
+              </LinkPreview>{" "}
+              di sekolah-sekolah demi masa depan generasi penerus, adalah
+              cerminan dari visi untuk Indonesia yang lebih maju dan sejahtera.{" "}
+              <br />
+              <br />
+              Kita semua memiliki peran dalam memastikan janji-janji ini bukan
+              sekadar kata-kata, tetapi menjadi kenyataan yang membawa perubahan
+              nyata bagi bangsa.
+            </p>
+            <div className="h-1 w-32 border-b-2 border-black absolute bottom-7 right-32"></div>
           </div>
         </div>
       </div>
