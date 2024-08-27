@@ -61,7 +61,7 @@ export const FloatingNav = ({
           className
         )}
       >
-        <h1 className="text-black w-full font-lora italic font-bold text-lg">
+        <h1 className="text-black w-full font-poppins italic font-light text-lg">
           Tagih Janji
         </h1>
         <div className="justify-self-center flex gap-5 justify-center w-full">

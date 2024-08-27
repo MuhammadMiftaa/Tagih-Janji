@@ -11,6 +11,10 @@ import { cn } from "@/lib/utils";
 import TextReveal from "@/components/magicui/text-reveal";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { MdFormatQuote } from "react-icons/md";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { HiOutlineArrowUp } from "react-icons/hi";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const navItems = [
@@ -33,9 +37,177 @@ export default function Home() {
     },
   ];
 
+  const projects = [
+    {
+      title: "Program Gizi dan Kesehatan Anak",
+      description:
+        "Memberi makan siang dan susu gratis di sekolah dan pesantren, serta bantuan gizi untuk anak balita dan ibu hamil.",
+    },
+    {
+      title: "Pelayanan Kesehatan Gratis",
+      description:
+        "Menyelenggarakan pemeriksaan kesehatan gratis, menuntaskan kasus TBC, dan membangun Rumah Sakit lengkap berkualitas di kabupaten.",
+    },
+    {
+      title: "Pengembangan Pertanian dan Pangan",
+      description:
+        "Mencetak dan meningkatkan produktivitas lahan pertanian dengan lumbung pangan desa, daerah, dan nasional.",
+    },
+    {
+      title: "Pendidikan dan Renovasi Sekolah",
+      description:
+        "Membangun sekolah-sekolah unggul terintegrasi di setiap kabupaten, dan memperbaiki sekolah-sekolah yang perlu renovasi.",
+    },
+    {
+      title: "Program Kesejahteraan Sosial",
+      description:
+        "Melanjutkan dan menambahkan program kartu-kartu kesejahteraan sosial serta kartu usaha untuk menghilangkan kemiskinan absolut.",
+    },
+    {
+      title: "Infrastruktur Desa dan BLT",
+      description:
+        "Melanjutkan pembangunan infrastruktur desa dan kelurahan, Bantuan Langsung Tunai (BLT).",
+    },
+    {
+      title: "Penerimaan Negara dan PDB",
+      description:
+        "Mendirikan Badan Penerimaan Negara dan meningkatkan rasio penerimaan negara terhadap produk domestik bruto (PDB) ke 23%.",
+    },
+    {
+      title: "Kesejahteraan ASN dan Aparatur Negara",
+      description:
+        "Menaikkan gaji ASN (terutama guru, dosen, tenaga kesehatan, dan penyuluh), TNI/POLRI, dan pejabat negara.",
+    },
+    {
+      title: "Pendidikan Kedokteran dan Beasiswa",
+      description:
+        "Membangun 300 Fakultas Kedokteran dan Beasiswa 10 Ribu Pelajar.",
+    },
+    {
+      title: "Pertumbuhan Ekonomi Nasional",
+      description: "Pertumbuhan Ekonomi Menembus 8 Persen.",
+    },
+    {
+      title: "Pelestarian Budaya Kalimantan",
+      description: "Memenuhi hak dan menjaga warisan budaya Kalimantan.",
+    },
+    {
+      title: "Kredit Usaha untuk Anak Muda",
+      description:
+        "Kredit usaha bisnis rintisan bagi para anak muda yang mudah diakses.",
+    },
+    {
+      title: "Penyediaan Rumah Murah",
+      description:
+        "Menjamin penyediakan rumah murah bersanitasi baik untuk yang membutuhkan, terutama generasi milenial, generasi Z, dan masyarakat berpenghasilan rendah (MBR).",
+    },
+    {
+      title: "Penanganan Banjir di Jakarta",
+      description:
+        "Memprioritaskan penanganan banjir di pemukiman padat dengan cara berkoordinasi dengan Gubernur DK Jakarta.",
+    },
+    {
+      title: "Pengelolaan Kekayaan Alam Indonesia",
+      description:
+        "Melakukan pengelolaan kekayaan alam Indonesia untuk kesejahteraan rakyat.",
+    },
+  ];
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > window.innerHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
   return (
     <main>
       {/* <FloatingNav className="font-lora" navItems={navItems} /> */}
+
+      <nav id="navbar" className="bg-white border-gray-200 dark:bg-gray-900 font-lora  border border-transparent dark:border-white/[0.2] shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
+          <a
+            href="https://flowbite.com/"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
+            <span className="px-7 self-center text-xl font-light whitespace-nowrap dark:text-white">
+              Tagih <span className="text-red">Janji</span>
+            </span>
+          </a>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul className="font-medium flex flex-col p-4 mr-20 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a
+                  href="#"
+                  className="font-light block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-light block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-light block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="font-light block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       <AuroraBackground>
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
@@ -71,7 +243,7 @@ export default function Home() {
         >
           Janji adalah utang, dan kami di sini untuk
           <br />
-          <Highlight className="text-black font-medium dark:text-white">
+          <Highlight className="text-black font-medium dark:text-white from-red to-white">
             mengingatkan.
           </Highlight>
         </motion.h1>
@@ -130,21 +302,21 @@ export default function Home() {
             mewujudkan apa yang sudah dijanjikannya.
           </p>
         </div>
-        <div className="mt-20 bg-yellow px-48 py-20">
+        <div className="mt-20 bg-yellow py-20">
           {/* 
           <h1 className="font-light text-5xl py-20 font-quicksand ">
             Janji Presiden dan Wakil Presiden Terpilih.
           </h1> */}
           <TypingAnimation
-            className="text-7xl text-left font-lora font-light text-black dark:text-white"
+            className="text-7xl px-48 text-left font-lora font-light text-black dark:text-white"
             text="Janji Presiden dan Wakil Presiden Terpilih."
           />
-          <p className="font-lora text-2xl mt-10">
+          <p className="font-lora px-48 text-2xl mt-10">
             Dari sekian banyak janji dan program Prabowo-Gibran di Pilpres 2024,
             terdapat tiga hal yang paling menonjol dan sering disampaikan oleh
             pasangan capres-cawapres tersebut.
           </p>
-          <div className="py-8">
+          <div className="px-48 py-8">
             <div>
               <h1 className="font-lora my-6 text-4xl font-semibold">
                 1. Melanjutkan Pembangunan IKN
@@ -200,7 +372,7 @@ export default function Home() {
                     className="font-bold text-xl md:text-3xl text-gray-50 relative"
                     style={{ textShadow: "3px 3px 5px #000" }}
                   >
-                    CNN Indonesia | 12 Agustus 2024
+                    Sin Po tv | 20 Desember 2023
                   </h1>
                 </div>
               </div>
@@ -229,7 +401,7 @@ export default function Home() {
                     className="font-bold text-xl md:text-3xl text-gray-50 relative"
                     style={{ textShadow: "3px 3px 5px #000" }}
                   >
-                    CNN Indonesia | 12 Agustus 2024
+                    tvOne News | 24 Mei 2024
                   </h1>
                 </div>
               </div>
@@ -239,8 +411,18 @@ export default function Home() {
               />
             </div>
           </div>
-
-          <div className="flex justify-center items-center h-[40rem] flex-col px-4 relative">
+          <div className=" py-20 w-full bg-zinc-950 font-lora">
+            <h1 className="text-5xl my-5 text-center font-light text-white">
+              Janji-janji lengkap dari{" "}
+              <Highlight className="text-black font-medium dark:text-white from-yellow to-zinc-950 from-50%">
+                Prabowo Gibran
+              </Highlight>
+            </h1>
+            <div className="max-w-5xl mx-auto px-8">
+              <HoverEffect items={projects} />
+            </div>
+          </div>
+          <div className="px-48 flex justify-center items-center h-[40rem] flex-col relative">
             <p className="text-neutral-900 font-lora dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto">
               <p className="text-7xl">
                 <MdFormatQuote />
@@ -281,10 +463,15 @@ export default function Home() {
               sekadar kata-kata, tetapi menjadi kenyataan yang membawa perubahan
               nyata bagi bangsa.
             </p>
-            <div className="h-1 w-32 border-b-2 border-black absolute bottom-7 right-32"></div>
+            <div className="h-1 w-32 border-b-2 border-black absolute bottom-7 right-72"></div>
           </div>
         </div>
       </div>
+      {isVisible && (
+        <Link href="#navbar" className="bg-black text-yellow rounded-full border border-zinc-600 p-3 text-xl fixed bottom-5 right-5 cursor-pointer">
+          <HiOutlineArrowUp />
+        </Link>
+      )}
     </main>
   );
 }
