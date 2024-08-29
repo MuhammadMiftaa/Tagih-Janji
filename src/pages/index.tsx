@@ -220,10 +220,6 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-20 bg-yellow py-20">
-            {/* 
-          <h1 className="font-light text-5xl py-20 font-quicksand ">
-            Janji Presiden dan Wakil Presiden Terpilih.
-          </h1> */}
             <TypingAnimation
               className="text-7xl px-48 text-left font-lora font-light text-black dark:text-white"
               text="Janji Presiden dan Wakil Presiden Terpilih."
@@ -341,9 +337,9 @@ export default function Home() {
             </div>
             <div className="px-48 flex justify-center items-center h-[40rem] flex-col relative">
               <p className="text-neutral-900 font-lora dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto">
-                <p className="text-7xl">
+                <span className="text-7xl">
                   <MdFormatQuote />
-                </p>
+                </span>
                 Janji-janji besar, seperti melanjutkan pembangunan{" "}
                 <LinkPreview
                   imageSrc="/gif/pembangunan-ikn.gif"
