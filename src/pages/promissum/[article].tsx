@@ -102,16 +102,55 @@ export default function ArticlePage(props: { data: ArticleType[] }) {
           />
         </div>
       </div>
-      <div className="h-screen w-screen flex justify-center items-center relative">
-        <p className="text-5xl font-lora w-3/4">
+      <div>
+        <div className="flex flex-col py-20 px-32 gap-8">
+          <h1 className="font-lora font-semibold uppercase">
+            Widji Thukul Masuk dalam Keppres
+            <span className="-tracking-[5px]">———</span>
+          </h1>
+          <p className="font-lora text-3xl">
+            Sebelumnya, Presiden Jokowi menandatangani Keputusan Presiden
+            (Keppres) Nomor 17 Tahun 2022 Tentang Pembentukan Tim Penyelesaian
+            Nonyudisial Pelanggaran Hak Asasi Manusia (HAM) berat masa lalu.
+            Keppres ini diteken Jokowi pada 26 Agustus 2022.
+          </p>
+        </div>
+        <div className="flex flex-row p-6 pr-44 gap-16">
+          <Image
+            className="w-1/2"
+            src={
+              "https://thumb.viva.co.id/media/frontend/thumbs3/2017/01/23/5885f8f58d59c-wiji-thukul_665_374.jpg"
+            }
+            alt="image-4"
+            width={1000}
+            height={1000}
+          />
+          <div className="font-lora text-sm w-1/2 flex flex-col gap-4">
+            <p className="">
+              Lalu pada awal 2023, Presiden Jokowi menerima laporan akhir
+              pelaksanaan tugas dan rekomendasi pelanggaran HAM berat di masa
+              lalu. Laporan itu sebelumnya diterima Menkopolhukam Mahfud MD dari
+              Tim Pelaksana Penyelesaian Nonyudisial Pelanggaran HAM yang Berat
+              di Masa Lalu (PPHAM).
+            </p>
+            <p className="">
+              Jokowi menjabarkan ada 12 peristiwa masuk dalam pelanggaran HAM.
+              Di antaranya adalah Peristiwa Kerusuhan Mei 1998 dan Wiji Thukul
+              hilang saat memperjuangkan reformasi
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="h-screen w-screen flex justify-center items-center ">
+        <p className="text-5xl font-lora w-3/4 relative">
           <span className="text-7xl">
             <MdFormatQuote />
           </span>
           Janji 9 tahun itu dimuat di beberapa media massa. Namun, saat ini,
           menurut Tri Wahyu, janji Jokowi mencari dan menemukan Wiji Thukul
           ternyata palsu.
+          <span className="h-1 w-32 border-b-2 border-black absolute -bottom-8 right-10"></span>
         </p>
-        <div className="h-1 w-32 border-b-2 border-black absolute bottom-1/4 right-72"></div>
       </div>
     </main>
   );

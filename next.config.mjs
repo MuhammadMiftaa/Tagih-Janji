@@ -9,7 +9,8 @@ const nextConfig = {
       "assets.aceternity.com",
       "static01.nyt.com",
       "asset.kompas.com",
-      "blue.kumparan.com"
+      "blue.kumparan.com",
+      "thumb.viva.co.id"
     ],
   },
 };
