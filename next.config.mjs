@@ -8,6 +8,8 @@ const nextConfig = {
       "api.microlink.io",
       "assets.aceternity.com",
       "static01.nyt.com",
+      "asset.kompas.com",
+      "blue.kumparan.com"
     ],
   },
 };
