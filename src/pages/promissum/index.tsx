@@ -6,9 +6,9 @@ import Link from "next/link";
 import useSWR from "swr";
 
 export async function getServerSideProps() {
-  const data = await fetch("http://localhost:3000/api/article").then((res) =>
-    res.json()
-  );
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/article`
+  ).then((res) => res.json());
   return { props: { dataArticle: data } };
 }
 

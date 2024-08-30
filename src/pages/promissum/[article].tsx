@@ -5,9 +5,9 @@ import React from "react";
 import { MdFormatQuote } from "react-icons/md";
 
 export async function getServerSideProps() {
-  const data = await fetch("http://localhost:3000/api/article").then((res) =>
-    res.json()
-  );
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/article`
+  ).then((res) => res.json());
   return { props: { data } };
 }
 

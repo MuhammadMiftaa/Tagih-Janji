@@ -10,7 +10,6 @@ export default async function handler(
     // Membaca file JSON menggunakan fs
     const data = await fs.readFile("public/article.json", "utf-8"); // Pastikan path benar
     const articles: ArticleType[] = JSON.parse(data); // Parse JSON menjadi objek
-    console.log(articles); // Log data yang diambil
 
     // Mengirimkan respons data
     res.status(200).json(articles);
