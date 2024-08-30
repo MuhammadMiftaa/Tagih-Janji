@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import React from "react";
 import { MdFormatQuote } from "react-icons/md";
 
-// export async function getStaticProps() {
-//   const data = await fetch("http://localhost:3000/api/article").then((res) =>
-//     res.json()
-//   );
-//   return { props: { data } };
-// }
+export async function getServerSideProps() {
+  const data = await fetch("http://localhost:3000/api/article").then((res) =>
+    res.json()
+  );
+  return { props: { data } };
+}
 
 export default function ArticlePage(props: { data: ArticleType[] }) {
   // const { query } = useRouter();
